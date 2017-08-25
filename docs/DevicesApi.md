@@ -1,0 +1,107 @@
+# KnetikIO.DevicesApi
+
+All URIs are relative to *https://api.knetik.io*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**newDevice**](DevicesApi.md#newDevice) | **POST** /v2/devices | Submit a new device event
+[**updateDeviceState**](DevicesApi.md#updateDeviceState) | **PUT** /v2/devices/{id} | Updates the state parameters for the given device
+
+
+<a name="newDevice"></a>
+# **newDevice**
+> newDevice(customerId, opts)
+
+Submit a new device event
+
+Declares to the Knetik.io platform that a device is new at the given point in time. If the &#39;checked&#39; parameter is provided and set to &#39;true&#39;, however, the current state of the device in the Knetik.io platform is examined to determine if the device was previously declared as new and, if so, the device information is not updated in the Knetik.io platform.
+
+### Example
+```javascript
+var KnetikIO = require('knetikio-sdk');
+
+var apiInstance = new KnetikIO.DevicesApi();
+
+var customerId = "customerId_example"; // String | customerId
+
+var opts = { 
+  'request': new KnetikIO.DataCollectorNewDeviceRequest(), // DataCollectorNewDeviceRequest | New device information
+  'checked': false // Boolean | Flag indicating whether the device state should be checked before updating the state in the Knetik.io platform
+};
+apiInstance.newDevice(customerId, opts).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **String**| customerId | 
+ **request** | [**DataCollectorNewDeviceRequest**](DataCollectorNewDeviceRequest.md)| New device information | [optional] 
+ **checked** | **Boolean**| Flag indicating whether the device state should be checked before updating the state in the Knetik.io platform | [optional] [default to false]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+<a name="updateDeviceState"></a>
+# **updateDeviceState**
+> updateDeviceState(id, customerId, opts)
+
+Updates the state parameters for the given device
+
+### Example
+```javascript
+var KnetikIO = require('knetikio-sdk');
+
+var apiInstance = new KnetikIO.DevicesApi();
+
+var id = "id_example"; // String | ID of the device for which state information is being updated
+
+var customerId = "customerId_example"; // String | customerId
+
+var opts = { 
+  'request': new KnetikIO.DataCollectorUpdateDeviceStateRequest() // DataCollectorUpdateDeviceStateRequest | Updated device state information
+};
+apiInstance.updateDeviceState(id, customerId, opts).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the device for which state information is being updated | 
+ **customerId** | **String**| customerId | 
+ **request** | [**DataCollectorUpdateDeviceStateRequest**](DataCollectorUpdateDeviceStateRequest.md)| Updated device state information | [optional] 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
