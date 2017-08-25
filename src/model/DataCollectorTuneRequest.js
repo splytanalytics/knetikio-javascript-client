@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/DataCollectorBaseRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./DataCollectorBaseRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikIO) {
       root.KnetikIO = {};
     }
-    root.KnetikIO.DataCollectorTuneRequest = factory(root.KnetikIO.ApiClient);
+    root.KnetikIO.DataCollectorTuneRequest = factory(root.KnetikIO.ApiClient, root.KnetikIO.DataCollectorBaseRequest);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, DataCollectorBaseRequest) {
   'use strict';
 
 
@@ -44,22 +44,16 @@
    * Constructs a new <code>DataCollectorTuneRequest</code>.
    * @alias module:model/DataCollectorTuneRequest
    * @class
-   * @param campaignName {String} Name of the campaign being tracked
-   * @param deviceId {String} Unique ID of the device
+   * @extends module:model/DataCollectorBaseRequest
    * @param eventTimestamp {Number} Epoch timestamp <i>in milliseconds</i> of when event itself occurred
    * @param requestType {String} Specifies the canonical model name of the request. Ex: DataCollectorNewUserRequest -> newUser, NewEventRequest -> newEvent,e tc
    * @param sendTimestamp {Number} Epoch timestamp <i>in milliseconds</i> of when event was sent to the API
+   * @param campaignName {String} Name of the campaign being tracked
    */
-  var exports = function(campaignName, deviceId, eventTimestamp, requestType, sendTimestamp) {
+  var exports = function(eventTimestamp, requestType, sendTimestamp, campaignName) {
     var _this = this;
-
+    DataCollectorBaseRequest.call(_this, eventTimestamp, requestType, sendTimestamp);
     _this['campaign_name'] = campaignName;
-    _this['device_id'] = deviceId;
-
-    _this['event_timestamp'] = eventTimestamp;
-    _this['request_type'] = requestType;
-    _this['send_timestamp'] = sendTimestamp;
-
   };
 
   /**
@@ -72,27 +66,9 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-
+      DataCollectorBaseRequest.constructFromObject(data, obj);
       if (data.hasOwnProperty('campaign_name')) {
         obj['campaign_name'] = ApiClient.convertToType(data['campaign_name'], 'String');
-      }
-      if (data.hasOwnProperty('device_id')) {
-        obj['device_id'] = ApiClient.convertToType(data['device_id'], 'String');
-      }
-      if (data.hasOwnProperty('event_properties')) {
-        obj['event_properties'] = ApiClient.convertToType(data['event_properties'], Object);
-      }
-      if (data.hasOwnProperty('event_timestamp')) {
-        obj['event_timestamp'] = ApiClient.convertToType(data['event_timestamp'], 'Number');
-      }
-      if (data.hasOwnProperty('request_type')) {
-        obj['request_type'] = ApiClient.convertToType(data['request_type'], 'String');
-      }
-      if (data.hasOwnProperty('send_timestamp')) {
-        obj['send_timestamp'] = ApiClient.convertToType(data['send_timestamp'], 'Number');
-      }
-      if (data.hasOwnProperty('user_id')) {
-        obj['user_id'] = ApiClient.convertToType(data['user_id'], 'String');
       }
     }
     return obj;
@@ -109,7 +85,11 @@
 		  exports.parent.registerChild(child, discriminatorValue);
   }
   
-  var discriminatorValue = 'DataCollectorTuneRequest';
+  var discriminatorValue = 'tune';
+  DataCollectorBaseRequest.registerChild(exports, discriminatorValue);
+  
+  exports.prototype = Object.create(DataCollectorBaseRequest.prototype);
+  exports.prototype.constructor = exports;
 
 
   /**
@@ -117,36 +97,6 @@
    * @member {String} campaign_name
    */
   exports.prototype['campaign_name'] = undefined;
-  /**
-   * Unique ID of the device
-   * @member {String} device_id
-   */
-  exports.prototype['device_id'] = undefined;
-  /**
-   * A key/value list of properties for this event. Values can be numerical, strings or booleans, proper typing matters (quoted vs unquoted)
-   * @member {Object} event_properties
-   */
-  exports.prototype['event_properties'] = undefined;
-  /**
-   * Epoch timestamp <i>in milliseconds</i> of when event itself occurred
-   * @member {Number} event_timestamp
-   */
-  exports.prototype['event_timestamp'] = undefined;
-  /**
-   * Specifies the canonical model name of the request. Ex: DataCollectorNewUserRequest -> newUser, NewEventRequest -> newEvent,e tc
-   * @member {String} request_type
-   */
-  exports.prototype['request_type'] = undefined;
-  /**
-   * Epoch timestamp <i>in milliseconds</i> of when event was sent to the API
-   * @member {Number} send_timestamp
-   */
-  exports.prototype['send_timestamp'] = undefined;
-  /**
-   * Unique ID of the user triggering the event
-   * @member {String} user_id
-   */
-  exports.prototype['user_id'] = undefined;
 
 
 

@@ -105,7 +105,7 @@
   
   var discriminatorValue = 'DataCollectorBaseRequest';
 
-
+exports.discriminatorField = 'request_type';
   /**
    * Unique ID of the device triggering the event
    * @member {String} device_id

@@ -57,36 +57,6 @@
       //expect(instance).to.be.a(KnetikIO.DataCollectorBeginTransactionRequest);
     });
 
-    it('should have the property deviceId (base name: "device_id")', function() {
-      // uncomment below and update the code to test the property deviceId
-      //var instane = new KnetikIO.DataCollectorBeginTransactionRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property eventProperties (base name: "event_properties")', function() {
-      // uncomment below and update the code to test the property eventProperties
-      //var instane = new KnetikIO.DataCollectorBeginTransactionRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property eventTimestamp (base name: "event_timestamp")', function() {
-      // uncomment below and update the code to test the property eventTimestamp
-      //var instane = new KnetikIO.DataCollectorBeginTransactionRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property requestType (base name: "request_type")', function() {
-      // uncomment below and update the code to test the property requestType
-      //var instane = new KnetikIO.DataCollectorBeginTransactionRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property sendTimestamp (base name: "send_timestamp")', function() {
-      // uncomment below and update the code to test the property sendTimestamp
-      //var instane = new KnetikIO.DataCollectorBeginTransactionRequest();
-      //expect(instance).to.be();
-    });
-
     it('should have the property timeout (base name: "timeout")', function() {
       // uncomment below and update the code to test the property timeout
       //var instane = new KnetikIO.DataCollectorBeginTransactionRequest();
@@ -101,12 +71,6 @@
 
     it('should have the property transactionId (base name: "transaction_id")', function() {
       // uncomment below and update the code to test the property transactionId
-      //var instane = new KnetikIO.DataCollectorBeginTransactionRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property userId (base name: "user_id")', function() {
-      // uncomment below and update the code to test the property userId
       //var instane = new KnetikIO.DataCollectorBeginTransactionRequest();
       //expect(instance).to.be();
     });
