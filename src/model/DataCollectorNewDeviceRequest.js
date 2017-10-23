@@ -37,7 +37,7 @@
   /**
    * The DataCollectorNewDeviceRequest model module.
    * @module model/DataCollectorNewDeviceRequest
-   * @version 3.0.6
+   * @version 3.0.7
    */
 
   /**

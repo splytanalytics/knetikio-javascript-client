@@ -34,7 +34,7 @@
   /**
    * Users service.
    * @module api/UsersApi
-   * @version 3.0.6
+   * @version 3.0.7
    */
 
   /**

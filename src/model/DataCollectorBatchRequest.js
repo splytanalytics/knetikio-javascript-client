@@ -37,7 +37,7 @@
   /**
    * The DataCollectorBatchRequest model module.
    * @module model/DataCollectorBatchRequest
-   * @version 3.0.6
+   * @version 3.0.7
    */
 
   /**

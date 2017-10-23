@@ -37,7 +37,7 @@
   /**
    * The DataCollectorUpdateUserStateRequest model module.
    * @module model/DataCollectorUpdateUserStateRequest
-   * @version 3.0.6
+   * @version 3.0.7
    */
 
   /**

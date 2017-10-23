@@ -37,7 +37,7 @@
   /**
    * The DataCollectorUpdateCollectionRequest model module.
    * @module model/DataCollectorUpdateCollectionRequest
-   * @version 3.0.6
+   * @version 3.0.7
    */
 
   /**

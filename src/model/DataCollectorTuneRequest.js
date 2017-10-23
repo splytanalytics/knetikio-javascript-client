@@ -37,7 +37,7 @@
   /**
    * The DataCollectorTuneRequest model module.
    * @module model/DataCollectorTuneRequest
-   * @version 3.0.6
+   * @version 3.0.7
    */
 
   /**

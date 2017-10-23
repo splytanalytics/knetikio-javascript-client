@@ -34,7 +34,7 @@
   /**
    * Batch service.
    * @module api/BatchApi
-   * @version 3.0.6
+   * @version 3.0.7
    */
 
   /**

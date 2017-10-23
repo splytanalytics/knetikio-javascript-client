@@ -37,7 +37,7 @@
   /**
    * The DataCollectorUpdateTransactionRequest model module.
    * @module model/DataCollectorUpdateTransactionRequest
-   * @version 3.0.6
+   * @version 3.0.7
    */
 
   /**

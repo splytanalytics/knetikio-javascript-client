@@ -37,7 +37,7 @@
   /**
    * The DataCollectorBeginTransactionRequest model module.
    * @module model/DataCollectorBeginTransactionRequest
-   * @version 3.0.6
+   * @version 3.0.7
    */
 
   /**

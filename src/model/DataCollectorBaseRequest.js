@@ -37,7 +37,7 @@
   /**
    * The DataCollectorBaseRequest model module.
    * @module model/DataCollectorBaseRequest
-   * @version 3.0.6
+   * @version 3.0.7
    */
 
   /**

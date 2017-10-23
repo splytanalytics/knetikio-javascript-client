@@ -37,7 +37,7 @@
   /**
    * The DataCollectorNewUserRequest model module.
    * @module model/DataCollectorNewUserRequest
-   * @version 3.0.6
+   * @version 3.0.7
    */
 
   /**
